@@ -137,7 +137,7 @@ const PlayField = () => {
       <div className="flex justify-center items-center w-full h-full">
         <div className="flex justify-center items-center relative select-none">
           <img
-            className="select-none w-[250px] md:w-[550px] lg:w-[650px]"
+            className="select-none w-[250px] md:w-[350px]"
             src={fieldCoreImage}
             alt="Rock Paper Scissors"
           />

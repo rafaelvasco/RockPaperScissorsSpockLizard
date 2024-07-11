@@ -2,7 +2,7 @@ import { create } from 'zustand';
 import PlayIconType from './PlayIconType';
 import { createJSONStorage, persist } from 'zustand/middleware';
 import { GameScreen } from './GameScreen';
-import GameResult from './GameResult';
+import GameResultEnum from './GameResultEnum';
 import { getRandomInt } from '@/lib/MathUtils';
 
 export interface GameStateData {
@@ -11,14 +11,14 @@ export interface GameStateData {
   lastPlayerPlay: PlayIconType | null;
   playerScore: number;
   highScore: number;
-  result?: GameResult | null;
+  result?: GameResultEnum | null;
 }
 
 export interface GameStateActions {
   pickCpuPlay: () => PlayIconType;
   addScore: (value: number) => void;
   reset: () => void;
-  goToGameResult: (gameResult: GameResult) => void;
+  goToGameResult: (gameResult: GameResultEnum) => void;
   setPlayerPlay: (type: PlayIconType) => void;
 }
 
@@ -102,7 +102,7 @@ export const useGameState = create<
 
         return pick;
       },
-      goToGameResult: (gameResult: GameResult) => {
+      goToGameResult: (gameResult: GameResultEnum) => {
         set({
           screen: GameScreen.Result,
           result: gameResult,
