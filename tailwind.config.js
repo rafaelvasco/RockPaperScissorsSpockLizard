@@ -4,6 +4,15 @@ import daisyui from 'daisyui';
 export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
+    screens: {
+      xs: '380px',
+      sm: '640px',
+      md: '768px',
+      lg: '1024px',
+      xl: '1280px',
+      '2xl': '1536px',
+      '3xl': '1920px',
+    },
     extend: {
       boxShadow: {
         'paper-body-shadow': '0 10px 0 0 hsl(230, 53%, 36%)',

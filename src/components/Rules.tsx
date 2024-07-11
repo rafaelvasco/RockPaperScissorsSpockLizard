@@ -6,7 +6,7 @@ const Rules = () => {
 
   return (
     <>
-      <div className="p-10 self-end">
+      <div className="p-10 lg:self-end">
         <button
           className="btn w-[200px] btn-primary rounded-lg btn-outline"
           onClick={() => modalRef.current?.showModal()}
@@ -17,7 +17,7 @@ const Rules = () => {
       <dialog
         ref={modalRef}
         id="rules-modal"
-        className="modal modal-bottom sm:modal-middle"
+        className="modal max-lg:modal-bottom modal-middle"
       >
         <div className="modal-box">
           <form method="dialog">

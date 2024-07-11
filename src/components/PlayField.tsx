@@ -4,9 +4,9 @@ import PlayIconType from '@/model/PlayIconType';
 import Position from '@/model/Position';
 import PlayIcon from './PlayIcon';
 import { useGameState } from '@/model/GameState';
-import GameResult from '@/model/GameResult';
+import GameResultEnum from '@/model/GameResultEnum';
 
-const PlayScreen = () => {
+const PlayField = () => {
   const {
     reset,
     addScore,
@@ -21,16 +21,16 @@ const PlayScreen = () => {
   };
 
   const CalculateOutcome = useCallback(() => {
-    let gameResult = GameResult.Draw;
+    let gameResult = GameResultEnum.Draw;
 
     const win = () => {
       addScore(1);
-      gameResult = GameResult.Won;
+      gameResult = GameResultEnum.Won;
     };
 
     const lost = () => {
       addScore(-1);
-      gameResult = GameResult.Lost;
+      gameResult = GameResultEnum.Lost;
     };
 
     switch (lastCpuPlay) {
@@ -137,7 +137,7 @@ const PlayScreen = () => {
       <div className="flex justify-center items-center w-full h-full">
         <div className="flex justify-center items-center relative select-none">
           <img
-            className="select-none w-[450px]"
+            className="select-none w-[250px] md:w-[550px] lg:w-[650px]"
             src={fieldCoreImage}
             alt="Rock Paper Scissors"
           />
@@ -177,4 +177,4 @@ const PlayScreen = () => {
   );
 };
 
-export default PlayScreen;
+export default PlayField;

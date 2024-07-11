@@ -104,7 +104,7 @@ const PlayIcon = ({
     <>
       <div
         className={clsx(
-          ' w-[350px] h-[350px] flex justify-center items-center rounded-[200px]',
+          ' w-[350px] h-[350px] max-sm:w-36 max-sm:h-36 max-lg:w-[250px] max-lg:h-[250px] flex justify-center items-center rounded-[200px]',
           GetIconClassNameBody(type)
         )}
       >
@@ -118,7 +118,7 @@ const PlayIcon = ({
       <div
         onClick={() => onClick?.(type)}
         className={clsx(
-          'cursor-pointer w-48 h-48 flex justify-center items-center absolute rounded-[200px]',
+          'cursor-pointer w-24 h-24 md:w-40 md:h-40 lg:w-48 lg:h-48 flex justify-center items-center absolute rounded-[200px]',
           GetIconClassNamePosition(position),
           GetIconClassNameBody(type)
         )}
